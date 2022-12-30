@@ -10,7 +10,7 @@
 
         <nav id="navbar" class="navbar  active order-last order-lg-0">
             <ul>
-                <li><a href="{{ url('/beranda') }}">Beranda</a></li>
+                <li><a href="{{ route('home') }}">Beranda</a></li>
                 <li><a href="{{ route('ensiklopedia') }}">Ensiklopedia</a></li>
                 <li><a href="{{ route('category') }}">Kelas</a></li>
                 <li><a href="{{ route('webinar') }}">Webinar</a></li>
