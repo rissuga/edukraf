@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\webinar;
@@ -25,7 +25,7 @@ class WebinarController extends Controller
       {
           return view('admin.webinar.add');
       }
-      
+
   
       public function store(Request $request)
       {

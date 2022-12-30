@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\Admin;
 use Carbon\Carbon;
 use App\Models\webinar;
 use App\Models\category;

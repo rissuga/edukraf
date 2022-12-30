@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Tambah Kelas</h4>
                     <form class="form-sample" enctype="multipart/form-data" method="post"
-                        action="{{ route('classroom.store') }}">
+                        action="{{ route('admin.classroom.store') }}">
                         @csrf
                         <p class="card-description">
                             Lengkapi form di bawah untuk menambah data kelas
@@ -66,7 +66,7 @@
                             <textarea class="form-control" id="exampleTextarea1" name="desc" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Simpan Data</button>
-                        <a class="btn btn-light" href="{{ route('classroom.cancel') }}">Batal</a>
+                        <a class="btn btn-light" href="{{ route('admin.classroom.cancel') }}">Batal</a>
 
                 </div>
                 </form>

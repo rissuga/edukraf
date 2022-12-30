@@ -110,7 +110,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> <a
-                                                    href="{{ route('webinar.dashboard') }}">Total Webinar</a>
+                                                    href="{{ route('admin.webinar.dashboard') }}">Total Webinar</a>
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
@@ -141,7 +141,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> <a
-                                                    href="{{ route('webinar.dashboard') }}">Total Kategori Kelas</a>
+                                                    href="{{ route('admin.webinar.dashboard') }}">Total Kategori
+                                                    Kelas</a>
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
@@ -172,7 +173,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> <a
-                                                    href="{{ route('webinar.dashboard') }}">Total Kelas</a>
+                                                    href="{{ route('admin.webinar.dashboard') }}">Total Kelas</a>
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">

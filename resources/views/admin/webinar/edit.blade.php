@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Edit Webinar</h4>
                     <form class="form-sample" enctype="multipart/form-data" method="post"
-                        action="{{ route('webinar.update') }}">
+                        action="{{ route('admin.webinar.update') }}">
                         @csrf
                         @method('GET')
                         <p class="card-description">
@@ -113,7 +113,7 @@
                             <textarea class="form-control" id="exampleTextarea1" name="desc" rows="4">{{ $desc }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Simpan Data</button>
-                        <a class="btn btn-light" href="{{ route('webinar.cancel') }}">Batal</a>
+                        <a class="btn btn-light" href="{{ route('admin.webinar.cancel') }}">Batal</a>
 
                 </div>
                 </form>

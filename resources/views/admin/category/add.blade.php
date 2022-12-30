@@ -21,7 +21,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form class="form-sample" method="post" action="{{ route('category.store') }}">
+                    <form class="form-sample" method="post" action="{{ route('admin.category.store') }}">
                         @csrf
                         <p class="card-description">
                             Lengkapi form di bawah untuk menambah data kategori kelas
@@ -44,7 +44,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary mr-2">Simpan Data</button>
-                        <a class="btn btn-light" href="{{ route('category.cancel') }}">Batal</a>
+                        <a class="btn btn-light" href="{{ route('admin.category.cancel') }}">Batal</a>
 
                 </div>
 

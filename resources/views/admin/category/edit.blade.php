@@ -9,7 +9,7 @@
                     <h4 class="card-title">Edit Kategori Kelas</h4>
 
                     <form class="form-sample" enctype="multipart/form-data" method="post"
-                        action="{{ route('category.update') }}">
+                        action="{{ route('admin.category.update') }}">
                         @csrf
                         @method('GET')
                         <p class="card-description">
@@ -36,7 +36,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary mr-2">Simpan Data</button>
-                        <a class="btn btn-light" href="{{ route('category.cancel') }}">Batal</a>
+                        <a class="btn btn-light" href="{{ route('admin.category.cancel') }}">Batal</a>
                 </div>
 
 

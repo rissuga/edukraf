@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Edit Kelas</h4>
                     <form class="form-sample" enctype="multipart/form-data" method="post"
-                        action="{{ route('classroom.update', $classroom->id) }}">
+                        action="{{ route('admin.classroom.update', $classroom->id) }}">
                         @csrf
                         @method('PUT')
                         <p class="card-description">
@@ -67,7 +67,7 @@
                             <textarea class="form-control" id="exampleTextarea1" name="desc" rows="4">{{ $classroom->desc_classroom }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Simpan Data</button>
-                        <a class="btn btn-light" href="{{ route('classroom.cancel') }}">Batal</a>
+                        <a class="btn btn-light" href="{{ route('admin.classroom.cancel') }}">Batal</a>
 
                 </div>
                 </form>

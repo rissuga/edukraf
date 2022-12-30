@@ -41,7 +41,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user" method="POST" action="{{ route('login') }}">
+                                    <form class="user" method="POST" action="{{ route('admin.login') }}">
                                         @csrf
 
                                         <div class="form-group">
@@ -64,17 +64,6 @@
                                         <button type="submit" class="btn btn-block btn-primary btn-user auth-form-btn">
                                             Login
                                         </button>
-
-                                        {{-- <a href="{{ route('login') }}" type="submit" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a> --}}
-                                        {{-- <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a> --}}
                                     </form>
                                     <hr>
                                     <div class="text-center">

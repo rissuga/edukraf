@@ -5,7 +5,8 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
                 <h1 class="h3 text-gray-800"><b>Data Kelas</b></h1>
-                <a href="{{ route('classroom.add') }}" style="float: right;" class="btn btn-rounded btn-success mb-4">Tambah
+                <a href="{{ route('admin.classroom.add') }}" style="float: right;"
+                    class="btn btn-rounded btn-success mb-4">Tambah
                     Data</a>
             </div>
 
@@ -34,11 +35,11 @@
                                     <td>{{ $clsrm->desc_classroom }}</td>
                                     <td>
                                         <div class="row">
-                                            <a href="{{ route('classroom.detail', $clsrm->id) }}"
+                                            <a href="{{ route('admin.classroom.detail', $clsrm->id) }}"
                                                 class="btn btn-info  btn-sm" style="margin-left: 4px;  ">Detail</a>
-                                            <a href="{{ route('classroom.edit', $clsrm->id) }}"
+                                            <a href="{{ route('admin.classroom.edit', $clsrm->id) }}"
                                                 class="btn btn-primary btn-sm" style="margin-left: 4px;">Edit</a>
-                                            <a href="{{ route('classroom.delete', $clsrm->id) }}"
+                                            <a href="{{ route('admin.classroom.delete', $clsrm->id) }}"
                                                 class="btn btn-danger btn-sm" style="margin-left: 4px;  ">Hapus</a>
                                         </div>
 

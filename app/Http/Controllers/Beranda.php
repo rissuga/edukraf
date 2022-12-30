@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers;
 use App\Models\webinar;
 use App\Models\category;
 use App\Models\classroom;

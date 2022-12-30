@@ -64,10 +64,14 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
+                        {{-- <a class="badge bg-primary text-light mb-2" href=""> --}}
+                        {{-- {{ $class->category['title_category'] }}</a> --}}
                         <h3>{{ $class->title_classroom }}</h3>
                         <p style="margin-bottom: 0px; font-weight:700;"> Kategori :
                             {{ $class->category['title_category'] }}</p>
-                        <p style="font-weight:700;"> sumber : {{ $class->source }}</p>
+                        <small class="mb-2">
+                            <i class="bx bxl-youtube"></i>&nbsp;{{ $class->source }}
+                        </small>
                         <p>
                             {{ $class->desc_classroom }}
                         </p>
@@ -80,20 +84,24 @@
 
                                     @foreach ($select as $key => $clsrm)
                                         <div class="col-lg-12 d-flex align-items-stretch mt-3">
-                                            <div class="card h-100">
-                                                <a href="{{ route('classdetail', $clsrm->id) }}">
-                                                    <div class="course-item">
-                                                        <img src="https://img.youtube.com/vi/{{ $clsrm->link_classroom }}/0.jpg"
-                                                            class="img-fluid" alt="">
-                                                        <div class="course-content">
-
-                                                            <h3>{{ $clsrm->title_classroom }}</h3>
-                                                            <p style="margin-bottom: 0px; font-weight:700;"> Kategori :
-                                                                {{ $clsrm->category['title_category'] }}</p>
-                                                            <p style="font-weight:700;"> sumber : {{ $clsrm->source }}</p>
-                                                            <p>{{ substrwords($clsrm->desc_classroom, 100) }}</p>
-                                                        </div>
+                                            <div class="card h-100"
+                                                onclick="window.location='{{ route('classdetail', $clsrm->id) }}'">
+                                                <div class="card-body">
+                                                    <img src="https://img.youtube.com/vi/{{ $clsrm->link_classroom }}/0.jpg"
+                                                        class="img-fluid" alt="" style=" object-fit: cover;">
+                                                    <div class="mt-3">
+                                                        <a class="badge bg-primary text-light mb-2" href="">
+                                                            {{ $clsrm->category['title_category'] }}</a>
+                                                        <h5><b>{{ $clsrm->title_classroom }}</b></h5>
+                                                        <small class="mb-2">
+                                                            <i class="bx bxl-youtube"></i>&nbsp;{{ $clsrm->source }}
+                                                        </small>
+                                                        <p class="mt-3 text-grey">
+                                                            {{ substrwords($clsrm->desc_classroom, 100) }}
+                                                        </p>
                                                     </div>
+
+                                                </div>
                                                 </a>
                                             </div>
 

@@ -42,19 +42,20 @@
             <span>Akun Admin</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href='{{ route('webinar.view') }}'>
+
+        <a class="nav-link" href='{{ route('admin.webinar.view') }}'>
             <i class="fas fa-fw fa-table"></i>
             <span>Webinar</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href='{{ route('category.view') }}'>
+        <a class="nav-link" href='{{ route('admin.category.view') }}'>
             <i class="fas fa-fw fa-table"></i>
             <span>Kategori Kelas</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href='{{ route('classroom.view') }}'>
+        <a class="nav-link" href='{{ route('admin.classroom.view') }}'>
             <i class="fas fa-fw fa-table"></i>
             <span>Kelas Edukraf</span></a>
     </li>

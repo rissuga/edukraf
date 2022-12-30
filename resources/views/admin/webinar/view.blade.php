@@ -5,7 +5,8 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
                 <h1 class="h3 text-gray-800"><b>Data Webinar</b></h1>
-                <a href="{{ route('webinar.add') }}" style="float: right;" class="btn btn-rounded btn-success mb-4">Tambah
+                <a href="{{ route('admin.webinar.add') }}" style="float: right;"
+                    class="btn btn-rounded btn-success mb-4">Tambah
                     Data</a>
             </div>
 
@@ -42,11 +43,11 @@
                                     <td><img src="/storage/{{ $allwebinar->cover }}" width="100px" alt=""></td>
                                     <td>
                                         <div class="row">
-                                            <a href="{{ route('webinar.detail', $allwebinar->id) }}"
+                                            <a href="{{ route('admin.webinar.detail', $allwebinar->id) }}"
                                                 class="btn btn-info btn-sm"style="margin-left: 4px;">Detail</a>
-                                            <a href="{{ route('webinar.edit', $allwebinar->id) }}"
+                                            <a href="{{ route('admin.webinar.edit', $allwebinar->id) }}"
                                                 class="btn btn-primary btn-sm"style="margin-left: 4px; ">Edit</a>
-                                            <a href="{{ route('webinar.delete', $allwebinar->id) }}"
+                                            <a href="{{ route('admin.webinar.delete', $allwebinar->id) }}"
                                                 class="btn btn-danger btn-sm"style="margin-left: 4px;">Hapus</a>
                                             <a href="">
                                                 <i class="bi bi-eye-fill"></i>

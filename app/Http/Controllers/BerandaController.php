@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers;
 use App\Models\webinar;
 use App\Models\category;
 use App\Models\classroom;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class BerandaController extends Controller
 {
-    //
+    
     public function fiturshow()
     {
         $webinar = webinar::orderBy('date', 'desc')->limit(5)->get();
@@ -19,4 +19,5 @@ class BerandaController extends Controller
         $class = classroom::all();
         return view('frontend.index', compact('webinar', 'category', 'class'));
     }
+
 }
