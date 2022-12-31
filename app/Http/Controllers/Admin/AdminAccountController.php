@@ -43,8 +43,7 @@ class AdminAccountController extends Controller
         $data->email = $request->email;
         $data->password = bcrypt($request->password);
         $data->save();
-        $request->session()->flash('msg',  "Data dengan nama berhasil disimpan");
-        return redirect()->route('admin.view')->with('info', 'Add User Succsess');
+        return redirect()->route('admin.view')->with('success', 'Tambah akun berhasil');
     }
 
     public function edit($id)
@@ -68,7 +67,7 @@ class AdminAccountController extends Controller
         $data->email = $request->email;
         $data->password = bcrypt($request->password);
         $data->save();
-        return redirect()->route('admin.view')->with('info', 'Update User Succsess');
+        return redirect()->route('admin.view')->with('success', 'Update Akun berhasil');
     }
 
     public function delete($id)
@@ -76,7 +75,7 @@ class AdminAccountController extends Controller
         // dd('hbh');
         $editData = User::find($id);
         $editData->delete();
-        return redirect()->route('admin.view')->with('info', 'Delete User Succsess');
+        return redirect()->route('admin.view');
     }
 
     public function cancel(){

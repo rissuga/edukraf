@@ -36,8 +36,8 @@
                                         <a href="{{ route('admin.edit', $User->id) }}" class="btn btn-info btn-sm"
                                             style="display: inline-block; 
                                             margin-left: 0px;">Edit</a>
-                                        <a href="{{ route('admin.delete', $User->id) }}" id="deleted"
-                                            class="btn btn-danger btn-sm"
+                                        <a href="{{ route('admin.delete', $User->id) }}" class="btn btn-danger btn-sm"
+                                            id="delete"
                                             style="display: inline-block; 
                                             margin-left: 4px;">Hapus</a>
                                     </td>
@@ -46,8 +46,11 @@
                         </tbody>
 
                     </table>
+                    <div class="row mt-5" style="margin-left: 10px;">
+                        {{ $MyUser->links('vendor.pagination.bootstrap-5') }}
+                    </div>
 
-                    {{ $MyUser->links() }}
+
 
                 </div>
 

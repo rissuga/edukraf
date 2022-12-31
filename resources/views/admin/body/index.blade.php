@@ -21,8 +21,14 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('backend/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <!-- Custom styles for this page -->
     <link href="{{ asset('backend/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+
+    <!-- Toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 
 </head>
@@ -111,6 +117,74 @@
         <!-- Page level custom scripts -->
         <script src="{{ asset('backend/js/demo/chart-area-demo.js') }}"></script>
         <script src="{{ asset('backend/js/demo/chart-pie-demo.js') }}"></script>
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                $(document).on('click', '#delete', function(e) {
+                    e.preventDefault();
+                    var link = $(this).attr("href");
+
+                    Swal.fire({
+                        title: 'Apakah Anda yakin?',
+                        text: "Anda tidak akan dapat mengembalikan ini!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = link
+                            Swal.fire(
+                                'Hapus!',
+                                'Data Anda telah dihapus.',
+                                'sukses'
+                            )
+                        }
+                    });
+
+                });
+            });
+        </script>
+
+
+        <!-- Toastr -->
+        <script>
+            @if (Session::has('message'))
+                toastr.options = {
+                    "closeButton": true,
+                    "progressBar": true
+                }
+                toastr.success("{{ session('message') }}");
+            @endif
+
+            @if (Session::has('error'))
+                toastr.options = {
+                    "closeButton": true,
+                    "progressBar": true
+                }
+                toastr.error("{{ session('error') }}");
+            @endif
+
+            @if (Session::has('info'))
+                toastr.options = {
+                    "closeButton": true,
+                    "progressBar": true
+                }
+                toastr.info("{{ session('info') }}");
+            @endif
+
+            @if (Session::has('warning'))
+                toastr.options = {
+                    "closeButton": true,
+                    "progressBar": true
+                }
+                toastr.warning("{{ session('warning') }}");
+            @endif
+        </script>
+
 
 
 </body>

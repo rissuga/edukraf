@@ -14,7 +14,7 @@ class WebinarController extends Controller
     //
     public function show()
     {
-        $webinar = webinar::paginate(9);
+        $webinar = webinar::paginate(10);
         return view('frontend.webinar', compact('webinar'));
     }
 

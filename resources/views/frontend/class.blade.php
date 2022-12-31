@@ -22,6 +22,17 @@
 
                 <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
+                    @if (empty($cat))
+                        <div class="my-5">
+                            <img src="{{ asset('frontend/assets/img/load.png') }}" alt=""
+                                style="display:block; margin:auto;">
+                            <p class="font-size-16 text-grey">Maaf kelas masih belum tersedia,
+                                silahkan kembali dilain waktu ya
+                            </p>
+                        </div>
+                    @else
+                    @endif
+
                     @foreach ($category as $key => $cat)
                         <div class="col-lg-3 mt-4">
                             <a href="{{ route('class', $cat->id) }}">

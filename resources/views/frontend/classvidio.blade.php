@@ -4,8 +4,6 @@
         <div class="row mt-5">
             <div class="col-md-12 pt-5 ">
                 <h1 class="text-center">{{ $category->title_category ?? 'None' }}</h1>
-                {{-- <h1 class="text-center">{{ $category->title_category ?? 'None' }}</h1> --}}
-                {{-- <h5 class="text-center mt-3">{{ $category->desc_category ?? 'None' }} --}}
                 </h5>
             </div>
         </div>
@@ -76,7 +74,21 @@
 
         <section id="courses" class="courses pt-5">
             <div class="container" data-aos="fade-up">
-                <div class="row row-cols-1 row-cols-md-3 g-4" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="row " data-aos="zoom-in" data-aos-delay="100">
+
+
+                    @if ($class->isEmpty())
+                        <div class="my-5">
+                            <img src="{{ asset('frontend/assets/img/empty.jpg') }}" alt=""
+                                style="display:block; margin:auto; width:30%; box-shadow: 0px 2px 19px rgba(234, 231, 231, 0.11);">
+                            <p class="font-size-16 text-grey">Maaf kelas {{ $category->title_category }} masih belum
+                                tersedia,
+                                silahkan kembali dilain waktu ya
+                            </p>
+                        </div>
+                    @endif
+
                     @foreach ($class as $key => $clsrm)
                         <div class="col-md-4 align-items-stretch mt-4">
                             <div class="card card-button h-100"
@@ -84,14 +96,7 @@
                                 <div class="card-body">
                                     <img src="https://img.youtube.com/vi/{{ $clsrm->link_classroom }}/0.jpg"
                                         class="img-fluid" alt="" style=" object-fit: cover;">
-
                                     <div class="mt-3">
-                                        {{-- @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
-                                            <span class="badge bg-warning text-dark mb-2">Akan Datang</span>
-                                        @else
-                                            <span class="badge bg-success text-light mb-2">Selesai</span>
-                                        @endif --}}
-
                                         <a class="badge bg-primary text-light mb-2" href="">
                                             {{ $clsrm->category['title_category'] }}</a>
                                         <h5><b>{{ $clsrm->title_classroom }}</b></h5>

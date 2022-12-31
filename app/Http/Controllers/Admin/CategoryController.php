@@ -12,7 +12,7 @@ class CategoryController extends Controller
      /******Admin******/
      public function index()
      {
-         $category = category::paginate(5);
+         $category = category::paginate(20);
          return view('admin.category.view', compact('category'));
      }
  
@@ -31,7 +31,8 @@ class CategoryController extends Controller
          $data->title_category = $title;
          $data->desc_category = $desc;
          $data->save();
-         return redirect()->route('admin.category.view')->with('info', 'Add User Succsess');   
+        //  toastr()->success('Berhasil Tambah Kategori');
+         return redirect()->route('admin.category.view')->with('success', 'Tambah kategori berhasil');   
      }
  
      public function edit($id)
@@ -56,13 +57,13 @@ class CategoryController extends Controller
          $data->title_category = $title;
          $data->desc_category = $desc;
          $data->save();
-         return redirect()->route('admin.category.view')->with('info', 'Add User Succsess');   
+         return redirect()->route('admin.category.view')->with('success', 'Update Kategori berhasil');   
      }
  
      public function delete($id){
          $category = category::find($id);
          $category->delete();
-         return redirect()->route('admin.category.view')->with('info', 'Delete User Succsess');
+         return redirect()->route('admin.category.view');
  
      }
      

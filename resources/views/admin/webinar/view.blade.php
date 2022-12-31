@@ -48,7 +48,8 @@
                                             <a href="{{ route('admin.webinar.edit', $allwebinar->id) }}"
                                                 class="btn btn-primary btn-sm"style="margin-left: 4px; ">Edit</a>
                                             <a href="{{ route('admin.webinar.delete', $allwebinar->id) }}"
-                                                class="btn btn-danger btn-sm"style="margin-left: 4px;">Hapus</a>
+                                                class="btn btn-danger btn-sm"style="margin-left: 4px;"
+                                                id="delete">Hapus</a>
                                             <a href="">
                                                 <i class="bi bi-eye-fill"></i>
                                             </a>
@@ -59,7 +60,9 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $webinar->links() }}
+                    <div class="row mt-5" style="margin-left: 10px;">
+                        {{ $webinar->links('vendor.pagination.bootstrap-5') }}
+                    </div>
 
                 </div>
             </div>

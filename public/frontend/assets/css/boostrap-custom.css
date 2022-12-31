@@ -20,6 +20,11 @@ body {
 .font-size-14 {
     font-size: 14px !important;
 }
+.font-size-16 {
+    font-size: 16px !important;
+    text-align: center;
+    font-weight: 700;
+}
 
 /* Letter spacing */
 .font-space-1 {
@@ -54,6 +59,22 @@ body {
 .card .card-body {
     padding: 17px  17px 10px 17px !important
 }
+
+.card-body-webinar img{
+    padding: 0x  6px 5px 6px !important;
+    border-radius: 15px !important;
+    overflow: clip;
+}
+
+.card .card-body-webinar .mt-3 {
+    padding: 0px  10px 5px 16px !important
+
+}
+
+.card .card-body-webinar .mt-2{
+    margin-top: 0px;
+}
+
 
 .card .card-body img {
     border-radius: 15px;

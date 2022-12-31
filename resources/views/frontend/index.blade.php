@@ -175,7 +175,7 @@
                                 <div class="col-md-4 align-items-stretch mt-4">
                                     <div class="card card-button h-100"
                                         onclick="window.location='{{ route('webinardetail', $web->id) }}'">
-                                        <div class="card-body">
+                                        <div class="card-body-webinar">
                                             <img src="/storage/{{ $web->cover }}" class="card-img-top"
                                                 alt="{{ $web->title }}" style="height: 300px; object-fit: cover;">
 
@@ -188,10 +188,10 @@
 
                                                 <h5><b>{{ $web->title }}</b></h5>
                                                 <small class="mb-2">
-                                                    <i class="bx bx-calendar"></i>&nbsp;{{ tgl_indo($web->date) }}
-                                                </small>
-
-                                                <p class="mt-3 text-grey">{{ substrwords($web->desc, 100) }}</p>
+                                                    <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
+                                                </small> <br>
+                                                <br>
+                                                <p class=" text-grey">{{ substrwords($web->desc, 100) }}</p>
 
                                             </div>
                                         </div>
@@ -258,16 +258,13 @@
                                         onclick="window.location='{{ route('classdetail', $clsrm->id) }}'">
                                         <div class="card-body">
                                             <img src="https://img.youtube.com/vi/{{ $clsrm->link_classroom }}/0.jpg"
-                                                class="img-fluid" alt=""
-                                                style="height: 300px; object-fit: cover;">
+                                                class="img-fluid" alt="" style=" object-fit: cover;">
                                             <div class="mt-3">
+                                                <a class="badge bg-primary text-light mb-2" href="">
+                                                    {{ $clsrm->category['title_category'] }}</a>
                                                 <h5><b>{{ $clsrm->title_classroom }}</b></h5>
                                                 <small class="mb-2">
-                                                    <i class='bx bxs-book mb-3 text-secondary'></i>&nbsp;
-                                                    {{ $clsrm->category['title_category'] }}
-                                                </small> <br>
-                                                <small class="mb-2">
-                                                    <i class="bx bxl-youtube"></i>&nbsp; sumber : {{ $clsrm->source }}
+                                                    <i class="bx bxl-youtube"></i>&nbsp;{{ $clsrm->source }}
                                                 </small>
 
                                                 <p class="mt-3 text-grey">{{ substrwords($clsrm->desc_classroom, 100) }}

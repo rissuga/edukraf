@@ -28,19 +28,13 @@
                                     <td scope="key">{{ $key + $category->firstItem() }}</td>
                                     <td>{{ $ctgr->title_category }}</td>
                                     <td>{{ $ctgr->desc_category }}</td>
-                                    {{-- <td>
-                                        @foreach ($ctgr->classroom as $classrooms)
-                                            -{{ $classrooms['title_classroom'] }} <br>
-                                        @endforeach
-                                    </td> --}}
-
                                     <td>
                                         <a href="{{ route('admin.category.edit', $ctgr->id) }}" class="btn btn-info btn-sm"
                                             style=" margin-left:5px; ">Edit</a>
-                                        <a href="{{ route('admin.category.delete', $ctgr->id) }}" id="deleted"
-                                            class="btn btn-danger btn-sm"
+                                        <a href="{{ route('admin.category.delete', $ctgr->id) }}"
+                                            class="btn btn-danger btn-sm" id="delete"
                                             style="display: inline-block;
-                                                margin-left: 5px;  ">Hapus</a>
+                                                margin-left: 5px;">Hapus</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -48,7 +42,9 @@
 
                     </table>
 
-                    {{ $category->links() }}
+                    <div class="row mt-5" style="margin-left: 10px;">
+                        {{ $category->links('vendor.pagination.bootstrap-5') }}
+                    </div>
 
                 </div>
 

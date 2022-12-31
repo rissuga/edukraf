@@ -13,24 +13,24 @@ class ClassroomController extends Controller
     //
     public function index()
     {
-        $classroom = classroom::paginate(5);
+        $classroom = classroom::paginate(20);
         return view('admin.classroom.view', compact('classroom'));
     }
 
-    public function show( $cat)
-    {
-        $class = classroom::where('category_id', $cat)->paginate(9);
-        $category = category::find($cat);
-        return view('frontend.classvidio' ,compact('class','category'));
-    }
+    // public function show( $cat)
+    // {
+    //     $class = classroom::where('category_id', $cat)->paginate(9);
+    //     $category = category::find($cat);
+    //     return view('frontend.classvidio' ,compact('class','category'));
+    // }
 
-    public function detail($id)
-    {
-        $class= classroom::find($id);
-        $select = classroom::paginate(3);
-        // $category = category::where('id', '==', $class->category_id)->get(['title_category']);
-        return view('frontend.classdetail' ,compact('class','select'));
-    }
+    // public function detail($id)
+    // {
+    //     $class= classroom::find($id);
+    //     $select = classroom::paginate(3);
+    //     // $category = category::where('id', '==', $class->category_id)->get(['title_category']);
+    //     return view('frontend.classdetail' ,compact('class','select'));
+    // }
     
     public function add(){
         $category = category::select('id','title_category')->get();
@@ -46,7 +46,7 @@ class ClassroomController extends Controller
         $data->desc_classroom = $request->desc;
         $data->source = $request->source;
         $data->save();
-        return redirect()->route('admin.classroom.view')->with('info', 'Update User Succsess');
+        return redirect()->route('admin.classroom.view')->with('success', 'Tambah kelas berhasil');
     }
 
    public function edit(Request $request, $id){
@@ -66,7 +66,7 @@ class ClassroomController extends Controller
     $data->desc_classroom = $request->desc;
     $data->source = $request->source;
     $data->save();
-    return redirect()->route('admin.classroom.view')->with('info', 'Update User Succsess');
+    return redirect()->route('admin.classroom.view')->with('success', 'Update kelas berhasil');
 
    }
 
@@ -74,7 +74,7 @@ class ClassroomController extends Controller
 
     $data = classroom::find($id);
     $data->delete();
-    return redirect()->route('admin.classroom.view')->with('info', 'Update User Succsess');
+    return redirect()->route('admin.classroom.view');
 
    }
 

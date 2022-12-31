@@ -40,7 +40,8 @@
                                             <a href="{{ route('admin.classroom.edit', $clsrm->id) }}"
                                                 class="btn btn-primary btn-sm" style="margin-left: 4px;">Edit</a>
                                             <a href="{{ route('admin.classroom.delete', $clsrm->id) }}"
-                                                class="btn btn-danger btn-sm" style="margin-left: 4px;  ">Hapus</a>
+                                                class="btn btn-danger btn-sm" style="margin-left: 4px;"
+                                                id="delete">Hapus</a>
                                         </div>
 
                                     </td>
@@ -49,7 +50,9 @@
                         </tbody>
 
                     </table>
-                    {{ $classroom->links() }}
+                    <div class="row mt-5" style="margin-left: 10px;">
+                        {{ $classroom->links('vendor.pagination.bootstrap-5') }}
+                    </div>
 
                 </div>
 

@@ -87,7 +87,7 @@
                         <div class="col-md-4 align-items-stretch mt-4">
                             <div class="card card-button h-100"
                                 onclick="window.location='{{ route('webinardetail', $web->id) }}'">
-                                <div class="card-body">
+                                <div class="card-body-webinar">
                                     <img src="/storage/{{ $web->cover }}" class="card-img-top" alt="{{ $web->title }}"
                                         style="height: 300px; object-fit: cover;">
 
@@ -100,10 +100,10 @@
 
                                         <h5><b>{{ $web->title }}</b></h5>
                                         <small class="mb-2">
-                                            <i class="bx bx-calendar"></i>&nbsp;{{ tgl_indo($web->date) }}
-                                        </small>
-
-                                        <p class="mt-3 text-grey">{{ substrwords($web->desc, 100) }}</p>
+                                            <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
+                                        </small> <br>
+                                        <br>
+                                        <p class=" text-grey">{{ substrwords($web->desc, 100) }}</p>
 
                                     </div>
                                 </div>
