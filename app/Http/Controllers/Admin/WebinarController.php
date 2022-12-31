@@ -55,7 +55,7 @@ class WebinarController extends Controller
           $data->time_start = $timeStart;
           $data->time_end = $timeEnd;
           $data->save();
-          return redirect()->route('webinar.view')->with('info', 'Add User Succsess');    
+          return redirect()->route('admin.webinar.view')->with('info', 'Add User Succsess');    
       }
   
   
@@ -107,19 +107,19 @@ class WebinarController extends Controller
           $data->time_start = $timeStart;
           $data->time_end = $timeEnd;
           $data->save();
-          return redirect()->route('webinar.view')->with('info', 'Add User Succsess');
+          return redirect()->route('admin.webinar.view')->with('info', 'Add User Succsess');
   
       }
   
       public function delete($id){
           $webinar = webinar::find($id);
           $webinar->delete();
-          return redirect()->route('webinar.view')->with('info', 'Delete User Succsess');
+          return redirect()->route('admin.webinar.view')->with('info', 'Delete User Succsess');
   
       }
   
       public function cancel(){
-          return redirect()->route('webinar.view');
+          return redirect()->route('admin.webinar.view');
   
       }
   

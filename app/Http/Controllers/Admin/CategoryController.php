@@ -31,7 +31,7 @@ class CategoryController extends Controller
          $data->title_category = $title;
          $data->desc_category = $desc;
          $data->save();
-         return redirect()->route('category.view')->with('info', 'Add User Succsess');   
+         return redirect()->route('admin.category.view')->with('info', 'Add User Succsess');   
      }
  
      public function edit($id)
@@ -56,48 +56,48 @@ class CategoryController extends Controller
          $data->title_category = $title;
          $data->desc_category = $desc;
          $data->save();
-         return redirect()->route('category.view')->with('info', 'Add User Succsess');   
+         return redirect()->route('admin.category.view')->with('info', 'Add User Succsess');   
      }
  
      public function delete($id){
          $category = category::find($id);
          $category->delete();
-         return redirect()->route('category.view')->with('info', 'Delete User Succsess');
+         return redirect()->route('admin.category.view')->with('info', 'Delete User Succsess');
  
      }
      
      public function cancel(){
-         return redirect()->route('category.view');
+         return redirect()->route('admin.category.view');
  
      }
  
      
-     /******Frontend*******/
+    //  /******Frontend*******/
  
-     public function show()
-     {
-         $category = category::all();
-         return view('frontend.class', compact('category'));
-     }
+    //  public function show()
+    //  {
+    //      $category = category::all();
+    //      return view('frontend.class', compact('category'));
+    //  }
  
      
-     public function fiturBeranda()
-     {
-         $category = category::all();
-         dd($category);
-         return view('frontend.index', compact('category'));
-     }
+    //  public function fiturBeranda()
+    //  {
+    //      $category = category::all();
+    //      dd($category);
+    //      return view('frontend.index', compact('category'));
+    //  }
  
-     public function categoryshow()
-     {
-         $category =category::where('id','<',6)->get();
-         return view('frontend.index', compact('category'));
-     }
+    //  public function categoryshow()
+    //  {
+    //      $category =category::where('id','<',6)->get();
+    //      return view('frontend.index', compact('category'));
+    //  }
      
-     public function tampil()
-     {
+    //  public function tampil()
+    //  {
         
-         $category = category::all();
-         return view('frontend.class', compact('category'));
-     }
+    //      $category = category::all();
+    //      return view('frontend.class', compact('category'));
+    //  }
 }

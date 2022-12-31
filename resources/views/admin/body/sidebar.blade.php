@@ -1,12 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        {{-- <div class="sidebar-brand-icon "
-            style=" background-color:#8EA7F1; box-shadow: 0px 2px 19px rgba(0, 0, 0, 0.11); margin-right:0px; padding: 3px 7px;">
-            <img style="background-color:#fff;" src="{{ asset('frontend/assets/img/logo.png') }}" alt=""
-                width="20px">
-        </div> --}}
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('admin/dashboard') }}">
         <div class="sidebar-brand-text mx-2"
             style="background-color:#8EA7F1; font-size:24px;  text-transform:none; padding-right:5px;  box-shadow: 0px 2px 19px rgba(0, 0, 0, 0.11); border-radius:7px; ">
             <img src="{{ asset('frontend/assets/img/logo.png') }}" alt="" width="36px"
@@ -20,7 +15,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ url('/dashboard') }}">
+        <a class="nav-link" href="{{ url('admin/dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>

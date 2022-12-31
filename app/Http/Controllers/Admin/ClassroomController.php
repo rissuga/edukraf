@@ -46,7 +46,7 @@ class ClassroomController extends Controller
         $data->desc_classroom = $request->desc;
         $data->source = $request->source;
         $data->save();
-        return redirect()->route('classroom.view')->with('info', 'Update User Succsess');
+        return redirect()->route('admin.classroom.view')->with('info', 'Update User Succsess');
     }
 
    public function edit(Request $request, $id){
@@ -66,7 +66,7 @@ class ClassroomController extends Controller
     $data->desc_classroom = $request->desc;
     $data->source = $request->source;
     $data->save();
-    return redirect()->route('classroom.view')->with('info', 'Update User Succsess');
+    return redirect()->route('admin.classroom.view')->with('info', 'Update User Succsess');
 
    }
 
@@ -74,12 +74,12 @@ class ClassroomController extends Controller
 
     $data = classroom::find($id);
     $data->delete();
-    return redirect()->route('classroom.view')->with('info', 'Update User Succsess');
+    return redirect()->route('admin.classroom.view')->with('info', 'Update User Succsess');
 
    }
 
    public function cancel(){
-    return redirect()->route('classroom.view');
+    return redirect()->route('admin.classroom.view');
 }
 
    public function detailAdmin($id) {

@@ -33,11 +33,11 @@
                                     <td>{{ $User->email }}</td>
 
                                     <td>
-                                        <a href="{{ route('admin.edit', $User->id) }}" class="btn btn-info"
+                                        <a href="{{ route('admin.edit', $User->id) }}" class="btn btn-info btn-sm"
                                             style="display: inline-block; 
                                             margin-left: 0px;">Edit</a>
                                         <a href="{{ route('admin.delete', $User->id) }}" id="deleted"
-                                            class="btn btn-danger"
+                                            class="btn btn-danger btn-sm"
                                             style="display: inline-block; 
                                             margin-left: 4px;">Hapus</a>
                                     </td>
