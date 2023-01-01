@@ -22,10 +22,10 @@
 
                 <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
-                    @if (empty($cat))
+                    @if ($category->isEmpty())
                         <div class="my-5">
-                            <img src="{{ asset('frontend/assets/img/load.png') }}" alt=""
-                                style="display:block; margin:auto;">
+                            <img src="{{ asset('frontend/assets/img/empty.jpg') }}" alt=""
+                                style="display:block; margin:auto; width:30%; box-shadow: 0px 2px 19px rgba(234, 231, 231, 0.11);">
                             <p class="font-size-16 text-grey">Maaf kelas masih belum tersedia,
                                 silahkan kembali dilain waktu ya
                             </p>

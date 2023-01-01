@@ -61,7 +61,7 @@ body {
 }
 
 .card-body-webinar img{
-    padding: 0x  6px 5px 6px !important;
+    padding: 0x  0px 0px 0px !important;
     border-radius: 15px !important;
     overflow: clip;
 }

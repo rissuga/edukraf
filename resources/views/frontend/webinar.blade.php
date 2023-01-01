@@ -82,7 +82,19 @@
                     </div>
                 </div>
 
-                <div class="row row-cols-1 row-cols-md-3 g-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="row " data-aos="zoom-in" data-aos-delay="100">
+
+                    @if ($webinar->isEmpty())
+                        <div class="my-5">
+                            <img src="{{ asset('frontend/assets/img/empty.jpg') }}" alt=""
+                                style="display:block; margin:auto; width:30%; box-shadow: 0px 2px 19px rgba(234, 231, 231, 0.11);">
+                            <p class="font-size-16 text-grey">Maaf webinar masih belum
+                                tersedia,
+                                silahkan kembali dilain waktu ya
+                            </p>
+                        </div>
+                    @endif
+
                     @foreach ($webinar as $key => $web)
                         <div class="col-md-4 align-items-stretch mt-4">
                             <div class="card card-button h-100"

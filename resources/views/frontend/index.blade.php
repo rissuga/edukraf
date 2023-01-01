@@ -171,6 +171,7 @@
                     </div>
                     <div>
                         <div class="row">
+
                             @foreach ($webinar as $key => $web)
                                 <div class="col-md-4 align-items-stretch mt-4">
                                     <div class="card card-button h-100"
@@ -199,17 +200,28 @@
                                 </div>
                             @endforeach
 
-                            <div class="col-md-4 align-items-stretch mt-4">
-                                <div class="card h-100">
-                                    <div class="card-body d-flex align-items-center">
-                                        <div class="mt-3">
-                                            <h5 class="mb-3">Dan masih banyak lagi</h5>
-                                            <a href="{{ route('webinar') }}" class="btn btn-outline-secondary btn-lg">Lihat
-                                                semuanya →</a>
+                            @if ($webinar->isEmpty())
+                                <div class="my-5">
+                                    <img src="{{ asset('frontend/assets/img/empty.jpg') }}" alt=""
+                                        style="display:block; margin:auto; width:30%; box-shadow: 0px 2px 19px rgba(234, 231, 231, 0.11);">
+                                    <p class="font-size-16 text-grey">Maaf fitur masih belum tersedia,
+                                        silahkan kembali dilain waktu ya
+                                    </p>
+                                </div>
+                            @else
+                                <div class="col-md-4 align-items-stretch mt-4">
+                                    <div class="card h-100">
+                                        <div class="card-body d-flex align-items-center">
+                                            <div class="mt-3">
+                                                <h5 class="mb-3">Dan masih banyak lagi</h5>
+                                                <a href="{{ route('webinar') }}"
+                                                    class="btn btn-outline-secondary btn-lg">Lihat
+                                                    semuanya →</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
 
@@ -237,6 +249,17 @@
                                 </a>
                             </div>
                         @endforeach
+
+                        @if ($category->isEmpty())
+                            <div class="my-5">
+                                <img src="{{ asset('frontend/assets/img/empty.jpg') }}" alt=""
+                                    style="display:block; margin:auto; width:30%; box-shadow: 0px 2px 19px rgba(234, 231, 231, 0.11);">
+                                <p class="font-size-16 text-grey">Maaf fitur masih belum tersedia,
+                                    silahkan kembali dilain waktu ya
+                                </p>
+                            </div>
+                        @else
+                        @endif
                     </div>
                 </div>
             </section>
@@ -252,6 +275,7 @@
                     </div>
                     <div>
                         <div class="row">
+
                             @foreach ($class as $key => $clsrm)
                                 <div class="col-md-4 align-items-stretch mt-4">
                                     <div class="card card-button h-100"
@@ -275,19 +299,29 @@
                                     </div>
                                 </div>
                             @endforeach
-
-                            <div class="col-md-4 align-items-stretch mt-4">
-                                <div class="card h-100">
-                                    <div class="card-body d-flex align-items-center">
-                                        <div class="mt-3">
-                                            <h5 class="mb-3">Dan masih banyak lagi</h5>
-                                            <a href="{{ route('webinar') }}"
-                                                class="btn btn-outline-secondary btn-lg">Lihat
-                                                semuanya →</a>
+                            @if ($class->isEmpty())
+                                <div class="my-5">
+                                    <img src="{{ asset('frontend/assets/img/empty.jpg') }}" alt=""
+                                        style="display:block; margin:auto; width:30%; box-shadow: 0px 2px 19px rgba(234, 231, 231, 0.11);">
+                                    <p class="font-size-16 text-grey">Maaf kelas masih belum tersedia,
+                                        silahkan kembali dilain waktu ya
+                                    </p>
+                                </div>
+                            @else
+                                <div class="col-md-4 align-items-stretch mt-4">
+                                    <div class="card h-100">
+                                        <div class="card-body d-flex align-items-center">
+                                            <div class="mt-3">
+                                                <h5 class="mb-3">Dan masih banyak lagi</h5>
+                                                <a href="{{ route('webinar') }}"
+                                                    class="btn btn-outline-secondary btn-lg">Lihat
+                                                    semuanya →</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
+
                         </div>
                     </div>
 
