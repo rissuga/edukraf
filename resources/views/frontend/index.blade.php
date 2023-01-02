@@ -313,7 +313,7 @@
                                         <div class="card-body d-flex align-items-center">
                                             <div class="mt-3">
                                                 <h5 class="mb-3">Dan masih banyak lagi</h5>
-                                                <a href="{{ route('webinar') }}"
+                                                <a href="{{ route('category') }}"
                                                     class="btn btn-outline-secondary btn-lg">Lihat
                                                     semuanya →</a>
                                             </div>
