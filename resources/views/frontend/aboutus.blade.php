@@ -92,7 +92,7 @@
         <!-- ======= Subsektor Section ======= -->
         <section id="about" class="about">
             <div class="container" data-aos="fade-up"
-                style=" background-color:#d2e1f2; padding-bottom:20px; padding-top:20px;">
+                style=" background-color:#d2e1f2; padding-bottom:20px; padding-top:20px; border-radius: 15px">
 
                 <div class="row">
                     <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-left" data-aos-delay="100">
