@@ -16,7 +16,7 @@ class BerandaController extends Controller
     {
         $webinar = webinar::orderBy('date', 'desc')->limit(5)->get();
         $category = category::all();
-        $class = classroom::all();
+        $class = classroom::orderBy('created_at', 'asc')->limit(5)->get();
         return view('frontend.index', compact('webinar', 'category', 'class'));
     }
 

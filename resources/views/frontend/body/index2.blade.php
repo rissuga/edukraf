@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>EDUKRAF</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>EDUKRAF | Edukasi Ekraf</title>
+    <meta content="Edukasi untuk Ekonomi Kreatif Kabupaten Jember" name="description">
+    <meta content="edukraf, edukasi, ekraf, ekraf jember" name="keywords">
 
     <!-- Favicons -->
     {{-- <link href="{{ asset('frontend/assets/img/favicon.png') }}" rel="icon"> --}}
