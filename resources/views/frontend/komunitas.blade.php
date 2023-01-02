@@ -14,11 +14,8 @@
                             Ekraf yang ada di Kabupaten Jember.
                         </p>
                         <div class="col-6 mx-auto">
-                            <button type="button" class="btn btn-primary">Gabung bersama kami
-                                <a href="#" class="wa">
-                                    <img src="assets/img/whatsapp.png" alt="">
-                                </a>
-                            </button>
+                            <a href="https://chat.whatsapp.com/Hied4siGehDBf0RlptDJEg" class="btn btn-primary">Gabung bersama
+                                kami</a>
                         </div>
 
                     </div>
