@@ -84,7 +84,7 @@
 
                 <div class="row " data-aos="zoom-in" data-aos-delay="100">
 
-                    @if ($webinar->isEmpty())
+                    {{-- @if ($webinar->isEmpty())
                         <div class="my-5">
                             <img src="{{ asset('frontend/assets/img/empty.jpg') }}" alt=""
                                 style="display:block; margin:auto; width:30%; box-shadow: 0px 2px 19px rgba(234, 231, 231, 0.11);">
@@ -93,7 +93,7 @@
                                 silahkan kembali dilain waktu ya
                             </p>
                         </div>
-                    @endif
+                    @endif --}}
 
                     @foreach ($webinar as $key => $web)
                         <div class="col-md-4 align-items-stretch mt-4">
