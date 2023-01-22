@@ -171,16 +171,15 @@
                     </div>
                     <div>
                         <div class="row">
-
                             @foreach ($webinar as $key => $web)
-                                <div class="col-md-4 align-items-stretch mt-4">
-                                    <div class="card card-button h-100"
+                                <div class="col-md-4 d-flex align-items-stretch mb-4">
+                                    <div class="card card-button card-2"
                                         onclick="window.location='{{ route('webinardetail', $web->id) }}'">
-                                        <div class="card-body-webinar">
-                                            <img src="/storage/{{ $web->cover }}" class="card-img-top"
+                                        <div class="card-body">
+                                            <img src="{{ img_url( $web->cover) }}" class="card-img-top"
                                                 alt="{{ $web->title }}" style="height: 300px; object-fit: cover;">
 
-                                            <div class="mt-3">
+                                            <div class="card-content p-3">
                                                 @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
                                                     <span class="badge bg-warning text-dark mb-2">Akan Datang</span>
                                                 @else
@@ -209,9 +208,9 @@
                                     </p>
                                 </div>
                             @else
-                                <div class="col-md-4 align-items-stretch mt-4">
-                                    <div class="card h-100">
-                                        <div class="card-body d-flex align-items-center">
+                                <div class="col-md-4 d-flex align-items-stretch mb-4">
+                                    <div class="card w-100">
+                                        <div class="card-body">
                                             <div class="mt-3">
                                                 <h5 class="mb-3">Dan masih banyak lagi</h5>
                                                 <a href="{{ route('webinar') }}"

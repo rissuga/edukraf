@@ -53,11 +53,11 @@
         <!-- ======= Cource Details Section ======= -->
         <section id="course-details" class="course-details mt-5">
             <div class="container" data-aos="fade-up">
-
+                     
                 <div class="row">
                     <div class="col-lg-8">
                         <!-- <img src="assets/img/course-details.jpg" class="img-fluid" alt=""> -->
-                        <img src="/storage/{{ $webinar->cover }}" class="img-fluid" alt="{{ $webinar->title }}">
+                        <img src="{{ img_url( $webinar->cover) }}" class="img-fluid" alt="{{ $webinar->title }}">
                         <h3>{{ $webinar->title }}</h3>
                         <p>
                             {{ $webinar->desc }}
@@ -95,34 +95,33 @@
                             <div class="container">
                                 <h5 style="font-size: 25px;">Webinar Lainnya</h5>
                                 <div class="row">
-                                    @foreach ($select as $key => $web)
-                                        <div class="col-md-12 align-items-stretch mt-4">
-                                            <div class="card card-button h-100"
-                                                onclick="window.location='{{ route('webinardetail', $web->id) }}'">
-                                                <div class="card-body">
-                                                    <img src="/storage/{{ $web->cover }}" class="card-img-top"
-                                                        alt="{{ $web->title }}"
-                                                        style="height: 300px; object-fit: cover;">
+                            @foreach ($select as $key => $web) 
+                                <div class="col-md-12 d-flex align-items-stretch mb-4">
+                                    <div class="card card-button card-2"
+                                        onclick="window.location='{{ route('webinardetail', $web->id) }}'">
+                                        <div class="card-body">
+                                            <img src="{{ img_url(asset("test/storage/app/public/" . $web->cover)) }}" class="card-img-top"
+                                                alt="{{ $web->title }}" style="height: 300px; object-fit: cover;">
 
-                                                    <div class="mt-3">
-                                                        @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
-                                                            <span class="badge bg-warning text-dark mb-2">Akan Datang</span>
-                                                        @else
-                                                            <span class="badge bg-success text-light mb-2">Selesai</span>
-                                                        @endif
+                                            <div class="card-content p-3">
+                                                @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
+                                                    <span class="badge bg-warning text-dark mb-2">Akan Datang</span>
+                                                @else
+                                                    <span class="badge bg-success text-light mb-2">Selesai</span>
+                                                @endif
 
-                                                        <h5><b>{{ $web->title }}</b></h5>
-                                                        <small class="mb-2">
-                                                            <i class="bx bx-calendar"></i>&nbsp;{{ tgl_indo($web->date) }}
-                                                        </small>
+                                                <h5><b>{{ $web->title }}</b></h5>
+                                                <small class="mb-2">
+                                                    <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
+                                                </small> <br>
+                                                <br>
+                                                <p class=" text-grey">{{ substrwords($web->desc, 100) }}</p>
 
-                                                        <p class="mt-3 text-grey">{{ substrwords($web->desc, 100) }}</p>
-
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                    @endforeach
+                                    </div>
+                                </div>
+                            @endforeach
                                 </div>
                             </div>
                         </section>
@@ -135,27 +134,33 @@
                             <div class="container">
                                 <h5 style="font-size: 25px;">Webinar Lainnya</h5>
                                 <div class="row">
-                                    @foreach ($select as $key => $web)
-                                        <div class="col-lg-12 d-flex align-items-stretch mt-3">
-                                            <a href="{{ route('webinardetail', $web->id) }}">
-                                                <div class="course-item">
-                                                    <img src="/storage/{{ $web->cover }}" class="img-fluid"
-                                                        alt="{{ $web->title }}">
-                                                    <div class="course-content">
+                            @foreach ($select as $key => $web) 
+                                <div class="col-md-4 d-flex align-items-stretch mb-4">
+                                    <div class="card card-button card-2"
+                                        onclick="window.location='{{ route('webinardetail', $web->id) }}'">
+                                        <div class="card-body">
+                                            <img src="{{ img_url(asset("test/storage/app/public/" . $web->cover)) }}" class="card-img-top"
+                                                alt="{{ $web->title }}" style="height: 300px; object-fit: cover;">
 
-                                                        <h3 style="margin-top: 0;">{{ $web->title }}</h3>
-                                                        <p>{{ $web->desc }}</p>
-                                                        <div
-                                                            class="trainer d-flex justify-content-between align-items-center">
-                                                            <div class="trainer-rank d-flex align-items-center">
-                                                                <i class="bx bx-calendar"></i>&nbsp;{{ $web->date }}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
+                                            <div class="card-content p-3">
+                                                @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
+                                                    <span class="badge bg-warning text-dark mb-2">Akan Datang</span>
+                                                @else
+                                                    <span class="badge bg-success text-light mb-2">Selesai</span>
+                                                @endif
+
+                                                <h5><b>{{ $web->title }}</b></h5>
+                                                <small class="mb-2">
+                                                    <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
+                                                </small> <br>
+                                                <br>
+                                                <p class=" text-grey">{{ substrwords($web->desc, 100) }}</p>
+
+                                            </div>
                                         </div>
-                                    @endforeach
+                                    </div>
+                                </div>
+                            @endforeach
                                 </div>
                             </div>
                         </section>

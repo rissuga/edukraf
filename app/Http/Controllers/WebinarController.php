@@ -22,14 +22,14 @@ class WebinarController extends Controller
     public function show_soon()
     {   
         $now = Carbon::now()->timestamp;
-        $webinar = webinar::whereDate('date','>',now())->paginate(9);
+        $webinar = webinar::whereDate('date','>','2022-12-13')->paginate(9);
         return view('frontend.webinar', compact('webinar'));
     }
     
     public function show_done()
     {   
         $now = Carbon::now()->timestamp;
-        $webinar = webinar::whereDate('date','<',now())->paginate(9);
+        $webinar = webinar::whereDate('date','<','2022-12-13')->paginate(9);
         return view('frontend.webinar', compact('webinar'));
     }
     

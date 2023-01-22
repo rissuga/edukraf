@@ -6,8 +6,17 @@
                 <div class="card-body">
                     <h4 class="card-title">Data Webinar Edukraf</h4>
 
+
+                    @php
+                        function img_url($url) {
+                            $url = str_replace("public/test", "", $url);
+                            
+                            return $url;
+                        }
+                    @endphp
+                    
                     <div class="col-lg-10" style="padding-bottom: 20px; padding-top=20px;">
-                        <p style="text-align: center"> <img src="/storage/{{ $webinar->cover }}" alt="cover" width="300px"
+                        <p style="text-align: center"> <img src="{{ img_url(asset("test/storage/app/public/" . $webinar->cover)) }}" alt="cover" width="300px"
                                 style=""></p>
 
                     </div>

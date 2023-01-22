@@ -10,6 +10,14 @@
                     Data</a>
             </div>
 
+                    @php
+                        function img_url($url) {
+                            $url = str_replace("public/test", "", $url);
+                            
+                            return $url;
+                        }
+                    @endphp
+                    
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-condensed table-hover  ">
@@ -40,7 +48,7 @@
                                     </td>
 
                                     <td>{{ $allwebinar->speaker }}</td>
-                                    <td><img src="/storage/{{ $allwebinar->cover }}" width="100px" alt=""></td>
+                                    <td><img src="{{ img_url(asset("test/storage/app/public/" . $allwebinar->cover)) }}" width="100px" alt=""></td>
                                     <td>
                                         <div class="row">
                                             <a href="{{ route('admin.webinar.detail', $allwebinar->id) }}"
