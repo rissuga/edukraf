@@ -160,74 +160,6 @@
             </section>
             <!-- End Why Us Section -->
 
-
-            <!-- ======= Fitur Webinar Section ======= -->
-            <section id="testimonials" class="testimonials my-5">
-                <div class="container" data-aos="fade-up">
-                    <div class="section-title">
-                        <h2>Webinar</h2>
-                        <p>Webinar Pilihan</p>
-
-                    </div>
-                    <div>
-                        <div class="row">
-                            @foreach ($webinar as $key => $web)
-                                <div class="col-md-4 d-flex align-items-stretch mb-4">
-                                    <div class="card card-button card-2"
-                                        onclick="window.location='{{ route('webinardetail', $web->id) }}'">
-                                        <div class="card-body">
-                                            <img src="{{ img_url( $web->cover) }}" class="card-img-top"
-                                                alt="{{ $web->title }}" style="height: 300px; object-fit: cover;">
-
-                                            <div class="card-content p-3">
-                                                @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
-                                                    <span class="badge bg-warning text-dark mb-2">Akan Datang</span>
-                                                @else
-                                                    <span class="badge bg-success text-light mb-2">Selesai</span>
-                                                @endif
-
-                                                <h5><b>{{ $web->title }}</b></h5>
-                                                <small class="mb-2">
-                                                    <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
-                                                </small> <br>
-                                                <br>
-                                                <p class=" text-grey">{{ substrwords($web->desc, 100) }}</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                            @if ($webinar->isEmpty())
-                                <div class="my-5">
-                                    <img src="{{ asset('frontend/assets/img/empty.jpg') }}" alt=""
-                                        style="display:block; margin:auto; width:30%; box-shadow: 0px 2px 19px rgba(234, 231, 231, 0.11);">
-                                    <p class="font-size-16 text-grey">Maaf fitur masih belum tersedia,
-                                        silahkan kembali dilain waktu ya
-                                    </p>
-                                </div>
-                            @else
-                                <div class="col-md-4 d-flex align-items-stretch mb-4">
-                                    <div class="card w-100">
-                                        <div class="card-body">
-                                            <div class="mt-3">
-                                                <h5 class="mb-3">Dan masih banyak lagi</h5>
-                                                <a href="{{ route('webinar') }}"
-                                                    class="btn btn-outline-secondary btn-lg">Lihat
-                                                    semuanya →</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-            <!-- End Fitur Webinar Section -->
-
             <!-- ======= Kategori Kelas Section ======= -->
             <section id="features" class="features my-5 bg-light">
                 <div class="container py-5 mt-3" data-aos="fade-up">
@@ -327,5 +259,72 @@
                 </div>
             </section>
             <!-- End Daftar Kelas Section -->
+
+            <!-- ======= Fitur Webinar Section ======= -->
+            <section id="testimonials" class="testimonials my-5">
+                <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                        <h2>Webinar</h2>
+                        <p>Webinar Pilihan</p>
+
+                    </div>
+                    <div>
+                        <div class="row">
+                            @foreach ($webinar as $key => $web)
+                                <div class="col-md-4 d-flex align-items-stretch mb-4">
+                                    <div class="card card-button card-2"
+                                        onclick="window.location='{{ route('webinardetail', $web->id) }}'">
+                                        <div class="card-body">
+                                            <img src="{{ img_url($web->cover) }}" class="card-img-top"
+                                                alt="{{ $web->title }}" style="height: 300px; object-fit: cover;">
+
+                                            <div class="card-content p-3">
+                                                @if (strtotime($web->date) >= strtotime(gmdate('Y-m-d', time() + 60 * 60 * 7)))
+                                                    <span class="badge bg-warning text-dark mb-2">Akan Datang</span>
+                                                @else
+                                                    <span class="badge bg-success text-light mb-2">Selesai</span>
+                                                @endif
+
+                                                <h5><b>{{ $web->title }}</b></h5>
+                                                <small class="mb-2">
+                                                    <i class="bx bx-calendar"></i>{{ tgl_indo($web->date) }}
+                                                </small> <br>
+                                                <br>
+                                                <p class=" text-grey">{{ substrwords($web->desc, 100) }}</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            @if ($webinar->isEmpty())
+                                <div class="my-5">
+                                    <img src="{{ asset('frontend/assets/img/empty.jpg') }}" alt=""
+                                        style="display:block; margin:auto; width:30%; box-shadow: 0px 2px 19px rgba(234, 231, 231, 0.11);">
+                                    <p class="font-size-16 text-grey">Maaf fitur masih belum tersedia,
+                                        silahkan kembali dilain waktu ya
+                                    </p>
+                                </div>
+                            @else
+                                <div class="col-md-4 d-flex align-items-stretch mb-4">
+                                    <div class="card w-100">
+                                        <div class="card-body">
+                                            <div class="mt-3">
+                                                <h5 class="mb-3">Dan masih banyak lagi</h5>
+                                                <a href="{{ route('webinar') }}"
+                                                    class="btn btn-outline-secondary btn-lg">Lihat
+                                                    semuanya →</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Fitur Webinar Section -->
         </main><!-- End #main -->
     @endsection
